@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-KIF Specs-KIF.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KIF Specs-Specta.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KIF Specs.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Unit Specs-Expecta.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Unit Specs-OCMock.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Unit Specs-Specta.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Unit Specs.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>131428149B30941DDC8B92B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>24405BC3B9F0D7836830D522</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C3BC2561E22580B6E9088B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>818424F9267A7BA37C3C331C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFE39711C57249B0325540D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F098F0F0E42EE4608C1D5378</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F100B63B6AFCFB664DDF6A59</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
