@@ -17,9 +17,9 @@ describe(@"AppDelegate", ^{
     it(@"Works", ^{
         [tester waitForAbsenceOfViewWithAccessibilityLabel:@"Not here"];
     });
-    it(@"Fails", ^{
-        [tester waitForViewWithAccessibilityLabel:@"Not Here"];
-    });
+//    it(@"Fails", ^{
+//        [tester waitForViewWithAccessibilityLabel:@"Not Here"];
+//    });
 });
 
 SpecEnd
