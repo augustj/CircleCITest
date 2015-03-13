@@ -8,7 +8,7 @@ test:
       CODE_SIGN_IDENTITY=
       PROVISIONING_PROFILE=
       -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
-      -sdk iphonesimulator
       -workspace CircleCITest.xcworkspace
       -scheme "CircleCITest"
-      build build-tests run-tests
+      -test-sdk iphonesimulator
+      test
