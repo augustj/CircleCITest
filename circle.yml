@@ -2,8 +2,8 @@ test:
   override:
     - xctool
       -reporter pretty
-      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/results.xml
-      -reporter plain:$CIRCLE_ARTIFACTS/xctool.log
+      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/iPhone_6_results.xml
+      -reporter plain:$CIRCLE_ARTIFACTS/iPhone_6_xctool.log
       CODE_SIGNING_REQUIRED=NO
       CODE_SIGN_IDENTITY=
       PROVISIONING_PROFILE=
@@ -14,8 +14,8 @@ test:
       -test-sdk iphonesimulator
     - xctool
       -reporter pretty
-      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/results.xml
-      -reporter plain:$CIRCLE_ARTIFACTS/xctool.log
+      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/iPhone_6_Plus_results.xml
+      -reporter plain:$CIRCLE_ARTIFACTS/iPhone_6_Plus_xctool.log
       CODE_SIGNING_REQUIRED=NO
       CODE_SIGN_IDENTITY=
       PROVISIONING_PROFILE=
