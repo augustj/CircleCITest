@@ -1,5 +1,8 @@
 test:
   override:
+    - xcodebuild
+      -showsdks
+      -version
     - xctool
       -reporter pretty
       -reporter junit:$CIRCLE_TEST_REPORTS/xcode/iPhone_6_results.xml
@@ -11,7 +14,7 @@ test:
       -workspace CircleCITest.xcworkspace
       -scheme "CircleCITest"
       test
-      -test-sdk iphonesimulator
+      -test-sdk iphonesimulator8.1
     - xctool
       -reporter pretty
       -reporter junit:$CIRCLE_TEST_REPORTS/xcode/iPhone_6_Plus_results.xml
@@ -23,4 +26,16 @@ test:
       -workspace CircleCITest.xcworkspace
       -scheme "CircleCITest"
       test
-      -test-sdk iphonesimulator
+      -test-sdk iphonesimulator8.1
+    - xctool
+      -reporter pretty
+      -reporter junit:$CIRCLE_TEST_REPORTS/xcode/iPhone_5_results.xml
+      -reporter plain:$CIRCLE_ARTIFACTS/iPhone_5_xctool.log
+      CODE_SIGNING_REQUIRED=NO
+      CODE_SIGN_IDENTITY=
+      PROVISIONING_PROFILE=
+      -destination 'platform=iOS Simulator,name=iPhone 5,OS=7.1'
+      -workspace CircleCITest.xcworkspace
+      -scheme "CircleCITest"
+      test
+      -test-sdk iphonesimulator7.1
