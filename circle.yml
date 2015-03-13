@@ -7,7 +7,7 @@ test:
       CODE_SIGNING_REQUIRED=NO
       CODE_SIGN_IDENTITY=
       PROVISIONING_PROFILE=
-      -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1'
+      -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
       -workspace CircleCITest.xcworkspace
       -scheme "CircleCITest"
       test
@@ -19,7 +19,7 @@ test:
       CODE_SIGNING_REQUIRED=NO
       CODE_SIGN_IDENTITY=
       PROVISIONING_PROFILE=
-      -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=8.1'
+      -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=latest'
       -workspace CircleCITest.xcworkspace
       -scheme "CircleCITest"
       test
