@@ -6,6 +6,15 @@ test:
       -showsdks
     - xctool
       -reporter pretty
+      -reporter plain:$CIRCLE_ARTIFACTS/build_xctool.log
+      CODE_SIGNING_REQUIRED=NO
+      CODE_SIGN_IDENTITY=
+      PROVISIONING_PROFILE=
+      -workspace CircleCITest.xcworkspace
+      -scheme "CircleCITest"
+      build-tests
+    - xctool
+      -reporter pretty
       -reporter junit:$CIRCLE_TEST_REPORTS/xcode/iPhone_6_results.xml
       -reporter plain:$CIRCLE_ARTIFACTS/iPhone_6_xctool.log
       CODE_SIGNING_REQUIRED=NO
@@ -14,5 +23,5 @@ test:
       -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
       -workspace CircleCITest.xcworkspace
       -scheme "CircleCITest"
-      test
-      -test-sdk iphonesimulator8.1
+      run-tests -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=latest' 
+      -sdk iphonesimulator
