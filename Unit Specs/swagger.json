@@ -1,0 +1,405 @@
+{
+   "paths" : {
+      "/playlists/{playlistId}/videos" : {
+         "put" : {
+            "summary" : "Add videos to playlist",
+            "operationId" : "addVideosToPlaylist",
+            "responses" : {
+               "400" : {
+                  "description" : "Bad request"
+               },
+               "204" : {
+                  "description" : "success"
+               }
+            },
+            "tags" : [
+               "playlist"
+            ],
+            "parameters" : [
+               {
+                  "in" : "path",
+                  "name" : "playlistId",
+                  "type" : "integer",
+                  "required" : true
+               },
+               {
+                  "name" : "videos",
+                  "in" : "body",
+                  "schema" : {
+                     "type" : "array",
+                     "items" : {
+                        "properties" : {
+                           "videoId" : {
+                              "type" : "integer"
+                           },
+                           "position" : {
+                              "type" : "integer"
+                           }
+                        },
+                        "type" : "object",
+                        "required" : [
+                           "videoId"
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "get" : {
+            "parameters" : [
+               {
+                  "in" : "path",
+                  "name" : "playlistId",
+                  "type" : "integer"
+               },
+               {
+                  "name" : "terminated",
+                  "in" : "query",
+                  "enum" : [
+                     0,
+                     1,
+                     2
+                  ],
+                  "default" : 0,
+                  "required" : false,
+                  "type" : "integer"
+               },
+               {
+                  "type" : "integer",
+                  "name" : "pageSize",
+                  "in" : "query"
+               },
+               {
+                  "name" : "page",
+                  "in" : "query",
+                  "type" : "integer"
+               },
+               {
+                  "required" : false,
+                  "type" : "string",
+                  "default" : "desc",
+                  "name" : "sortDirection",
+                  "in" : "query",
+                  "enum" : [
+                     "asc",
+                     "desc"
+                  ]
+               },
+               {
+                  "type" : "string",
+                  "in" : "query",
+                  "name" : "fields"
+               }
+            ],
+            "responses" : {
+               "200" : {
+                  "schema" : {
+                     "items" : {
+                        "type" : "integer"
+                     },
+                     "type" : "array"
+                  },
+                  "description" : "success"
+               }
+            },
+            "tags" : [
+               "playlist"
+            ],
+            "operationId" : "getPlaylistVideos",
+            "summary" : "Get playlist videos"
+         },
+         "delete" : {
+            "parameters" : [
+               {
+                  "required" : true,
+                  "type" : "integer",
+                  "name" : "playlistId",
+                  "in" : "path"
+               },
+               {
+                  "name" : "videos",
+                  "in" : "body",
+                  "schema" : {
+                     "type" : "array",
+                     "items" : {
+                        "required" : [
+                           "videoId"
+                        ],
+                        "type" : "object",
+                        "properties" : {
+                           "videoId" : {
+                              "type" : "integer"
+                           }
+                        }
+                     }
+                  }
+               }
+            ],
+            "tags" : [
+               "playlist"
+            ],
+            "responses" : {
+               "400" : {
+                  "description" : "Bad request"
+               },
+               "204" : {
+                  "description" : "success"
+               }
+            },
+            "operationId" : "deleteVideoFromPlaylist",
+            "summary" : "Delete videos from playlist"
+         }
+      },
+      "/playlists/{playlistId}" : {
+         "delete" : {
+            "tags" : [
+               "playlist"
+            ],
+            "responses" : {
+               "204" : {
+                  "description" : "success"
+               }
+            },
+            "parameters" : [
+               {
+                  "name" : "playlistId",
+                  "in" : "path",
+                  "required" : true,
+                  "type" : "integer"
+               }
+            ],
+            "summary" : "Delete playlist",
+            "operationId" : "deletePlaylist"
+         },
+         "get" : {
+            "responses" : {
+               "404" : {
+                  "description" : "Playlist not found"
+               },
+               "200" : {
+                  "schema" : {
+                     "type" : "array",
+                     "items" : {
+                        "$ref" : "#/definitions/Playlist"
+                     }
+                  },
+                  "description" : "success"
+               }
+            },
+            "tags" : [
+               "playlist"
+            ],
+            "parameters" : [
+               {
+                  "name" : "playlistId",
+                  "in" : "path",
+                  "type" : "integer"
+               },
+               {
+                  "type" : "integer",
+                  "required" : false,
+                  "default" : 0,
+                  "enum" : [
+                     0,
+                     1,
+                     2
+                  ],
+                  "in" : "query",
+                  "name" : "terminated"
+               },
+               {
+                  "type" : "string",
+                  "in" : "query",
+                  "name" : "fields"
+               }
+            ],
+            "summary" : "Get a playlist by ID",
+            "operationId" : "getPlaylistById"
+         },
+         "put" : {
+            "tags" : [
+               "playlist"
+            ],
+            "responses" : {
+               "200" : {
+                  "description" : "success",
+                  "schema" : {
+                     "$ref" : "#/definitions/Playlist"
+                  }
+               },
+               "400" : {
+                  "description" : "Bad request"
+               }
+            },
+            "parameters" : [
+               {
+                  "required" : true,
+                  "type" : "integer",
+                  "name" : "playlistId",
+                  "in" : "path"
+               },
+               {
+                  "schema" : {
+                     "$ref" : "#/definitions/Playlist"
+                  },
+                  "in" : "body",
+                  "name" : "playlist"
+               }
+            ],
+            "summary" : "Update playlist",
+            "operationId" : "updatePlaylist"
+         }
+      },
+      "/playlists" : {
+         "get" : {
+            "tags" : [
+               "playlist"
+            ],
+            "responses" : {
+               "200" : {
+                  "description" : "success",
+                  "schema" : {
+                     "items" : {
+                        "$ref" : "#/definitions/Playlist"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "parameters" : [
+               {
+                  "in" : "query",
+                  "name" : "pageSize",
+                  "default" : 10,
+                  "type" : "integer"
+               },
+               {
+                  "type" : "integer",
+                  "default" : 1,
+                  "in" : "query",
+                  "name" : "page"
+               },
+               {
+                  "type" : "integer",
+                  "required" : false,
+                  "default" : 0,
+                  "description" : "0: exclude, 1: only, 2: both",
+                  "enum" : [
+                     0,
+                     1,
+                     2
+                  ],
+                  "in" : "query",
+                  "name" : "terminated"
+               },
+               {
+                  "required" : false,
+                  "type" : "string",
+                  "default" : "desc",
+                  "name" : "sortDirection",
+                  "enum" : [
+                     "asc",
+                     "desc"
+                  ],
+                  "in" : "query"
+               },
+               {
+                  "name" : "fields",
+                  "in" : "query",
+                  "type" : "string"
+               }
+            ],
+            "summary" : "List playlists",
+            "operationId" : "getPlaylists"
+         },
+         "post" : {
+            "operationId" : "insertPlaylist",
+            "summary" : "Insert new playlist",
+            "parameters" : [
+               {
+                  "name" : "body",
+                  "in" : "body",
+                  "schema" : {
+                     "$ref" : "#/definitions/Playlist"
+                  },
+                  "required" : true
+               }
+            ],
+            "tags" : [
+               "playlist"
+            ],
+            "responses" : {
+               "201" : {
+                  "description" : "created",
+                  "schema" : {
+                     "$ref" : "#/definitions/Playlist"
+                  }
+               }
+            }
+         }
+      }
+   },
+   "swagger" : "2.0",
+   "info" : {
+      "title" : "service-playlist",
+      "version" : "1.0.0"
+   },
+   "definitions" : {
+      "Playlist" : {
+         "properties" : {
+            "keywords" : {
+               "type" : "string"
+            },
+            "type" : {
+               "type" : "integer"
+            },
+            "image" : {
+               "type" : "string"
+            },
+            "mature" : {
+               "type" : "boolean"
+            },
+            "people" : {
+               "type" : "array",
+               "items" : {
+                  "type" : "string"
+               }
+            },
+            "tags" : {
+               "items" : {
+                  "type" : "integer"
+               },
+               "type" : "array"
+            },
+            "dateCreated" : {
+               "format" : "date-time",
+               "type" : "string"
+            },
+            "dateTerminated" : {
+               "format" : "date-time",
+               "type" : "string"
+            },
+            "description" : {
+               "type" : "string"
+            },
+            "dateUpdated" : {
+               "format" : "date-time",
+               "type" : "string"
+            },
+            "title" : {
+               "type" : "string"
+            },
+            "id" : {
+               "type" : "integer"
+            }
+         },
+         "type" : "object",
+         "required" : [
+            "title",
+            "type"
+         ],
+         "$schema" : "http://json-schema.org/draft-04/schema#",
+         "title" : "playlist"
+      }
+   }
+}

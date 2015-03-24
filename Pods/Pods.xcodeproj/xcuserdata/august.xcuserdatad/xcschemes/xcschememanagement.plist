@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-CircleCITest-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CircleCITest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-KIF Specs-KIF.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KIF Specs-OHHTTPStubs.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Unit Specs-OHHTTPStubs.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Unit Specs-Specta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>131428149B30941DDC8B92B8</key>
+		<key>073D0FE5A9A576BFB50A7D1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>24405BC3B9F0D7836830D522</key>
+		<key>08E0AE76873F2A488C1FF00A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C3BC2561E22580B6E9088B5</key>
+		<key>1E456BBF862D92993755D1C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>818424F9267A7BA37C3C331C</key>
+		<key>2E49B7D0DB150C74CEFA5452</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DFE39711C57249B0325540D9</key>
+		<key>6FE6AB2242585F4ADBFEC889</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F098F0F0E42EE4608C1D5378</key>
+		<key>707E1BABF68BC21EA7E47FF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F100B63B6AFCFB664DDF6A59</key>
+		<key>AA88F66B8A524EDBECEE80F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9F20CCEDECFA43F4AB614A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9ED41626D090EF214D5960C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8721F4A4AD4383E7E8D36F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD709A6E2933FB02100D7AD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
